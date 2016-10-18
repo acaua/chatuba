@@ -1,0 +1,23 @@
+{
+  "name": "chatuba",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acaua/chatuba.git"
+  },
+  "author": "Acaua Sperl de Faria",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/acaua/chatuba/issues"
+  },
+  "homepage": "https://github.com/acaua/chatuba#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "socket.io": "^1.5.0"
+  }
+}
