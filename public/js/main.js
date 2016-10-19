@@ -27,7 +27,8 @@ $(document).ready(function(){
   });
 
   socket.on('chat message', function(msg){
-    $('#messages').append($('<li>').html('<strong>' + msg.username + ': </strong>' + msg.message));
+    if (msg.username != myUsername)
+      $('#messages').append($('<li>').html('<strong>' + msg.username + ': </strong>' + msg.message));
   });
 
   socket.on('user connect', function(msg){
