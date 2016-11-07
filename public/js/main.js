@@ -20,16 +20,20 @@ $(document).ready(function(){
       $('#messages').append($('<li>').html('<strong>' + msg.username + ': </strong>' + msg.message));
   });
 
-  socket.on('user connect', function(msg){
-    $('#messages').append($('<li>').html('User joined: <strong>' + msg.username + '</strong>'));
+  socket.on('user connect', function(username){
+    $('#messages').append($('<li>').html('User joined: <strong>' + username + '</strong>'));
 
-    updateUserList(msg.users);
+    socket.emit('get users');
   });      
 
-  socket.on('user disconnect', function(msg){
-    $('#messages').append($('<li>').html('User left: <strong>' + msg.username + '</strong>'));
+  socket.on('user disconnect', function(username){
+    $('#messages').append($('<li>').html('User left: <strong>' + username + '</strong>'));
 
-    updateUserList(msg.users);
+    socket.emit('get users');
+  }); 
+
+  socket.on('user list', function(userList){
+    updateUserList(userList);
   }); 
 
 });
