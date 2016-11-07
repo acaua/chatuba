@@ -1,0 +1,25 @@
+<div id="chat-wrapper">
+  <div class="row">
+    <div class="col-md-8">
+      <ul id="messages"></ul>
+    </div>
+    
+    <div class="col-md-4">
+      <ul id="users"></ul>
+    </div>
+  </div>
+  <div class="row">
+    <form id="form-message" class="form-inline">
+      <div class="form-group">
+        <label id="my-username" for="message">Name</label>
+        <input type="text" class="form-control" id="message" autocomplete="off"  placeholder="Enter message...">
+      </div>
+      <button type="submit" class="btn btn-default">Send</button>
+    </form>
+  </div>
+</div>
+
+{{#section 'script'}}
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/main.js"></script>
+{{/section}}
